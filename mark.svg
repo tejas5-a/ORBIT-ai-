@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="ORBIT">
+  <ellipse cx="16" cy="16" rx="11" ry="4.6" transform="rotate(-18 16 16)" fill="none" stroke="#6E3AFF" stroke-width="1.6"/>
+  <ellipse cx="16" cy="16" rx="11" ry="4.6" transform="rotate(46 16 16)" fill="none" stroke="#5B2BE0" stroke-width="1.6"/>
+  <ellipse cx="16" cy="16" rx="11" ry="4.6" transform="rotate(108 16 16)" fill="none" stroke="#2D62F0" stroke-width="1.6"/>
+  <circle cx="16" cy="16" r="2.3" fill="#5B2BE0"/>
+  <circle cx="26.2" cy="14.2" r="1.6" fill="#2D62F0"/>
+</svg>

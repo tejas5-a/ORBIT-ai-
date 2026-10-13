@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-density="comfortable">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="ORBIT is a local AI coding workspace shell. Milestone 1 does not call models or read the disk.">
+  <title>ORBIT — Multiple AI Brains. One Coding Universe.</title>
+  <script>
+    (function () {
+      try {
+        var raw = localStorage.getItem('orbit.shell.v1');
+        var theme = 'light';
+        if (raw) {
+          var data = JSON.parse(raw);
+          theme = data && data.preferences && data.preferences.theme || 'light';
+        }
+        if (theme === 'system') {
+          theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
+      } catch (err) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="app">
+    <div class="accent" aria-hidden="true"></div>
+    <div class="shell">
+      <aside class="sidebar">
+        <button type="button" class="brand" id="brand-home">
+          <svg class="mark" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+            <ellipse cx="16" cy="16" rx="11" ry="4.6" transform="rotate(-18 16 16)" fill="none" stroke="#6E3AFF" stroke-width="1.6"></ellipse>
+            <ellipse cx="16" cy="16" rx="11" ry="4.6" transform="rotate(46 16 16)" fill="none" stroke="#5B2BE0" stroke-width="1.6"></ellipse>
+            <ellipse cx="16" cy="16" rx="11" ry="4.6" transform="rotate(108 16 16)" fill="none" stroke="#2D62F0" stroke-width="1.6"></ellipse>
+            <circle cx="16" cy="16" r="2.3" fill="#5B2BE0"></circle>
+            <circle cx="26.2" cy="14.2" r="1.6" fill="#2D62F0"></circle>
+          </svg>
+          <span>
+            <span class="wordmark">ORBIT</span>
+            <span class="tagline"><span>Multiple AI brains.</span><span>One coding universe.</span></span>
+          </span>
+        </button>
+        <nav id="nav" aria-label="Primary"></nav>
+        <div class="sidebar-foot" id="sidebar-foot"></div>
+      </aside>
+      <div class="workspace">
+        <main id="main" tabindex="-1">
+          <noscript class="noscript">ORBIT needs JavaScript for its shell. No files are accessed without it.</noscript>
+        </main>
+      </div>
+    </div>
+    <footer class="statusbar" id="statusbar" aria-label="Application status"></footer>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toast-root" aria-live="polite"></div>
+  <script src="services/errors.js"></script>
+  <script src="services/compatibility.js"></script>
+  <script src="services/runtime.js"></script>
+  <script src="services/providers.js"></script>
+  <script src="services/path-guard.js"></script>
+  <script src="services/filesystem-adapter.js"></script>
+  <script src="services/orchestration.js"></script>
+  <script src="services/shell-store.js"></script>
+  <script src="scripts/ui.js"></script>
+  <script src="scripts/navigation.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/dashboard.js"></script>
+  <script src="scripts/ai-client.js"></script>
+  <script src="scripts/projects.js"></script>
+  <script src="scripts/editor.js"></script>
+  <script src="scripts/agent.js"></script>
+  <script src="scripts/settings.js"></script>
+  <script>
+    ORBIT.app.boot();
+  </script>
+</body>
+</html>
